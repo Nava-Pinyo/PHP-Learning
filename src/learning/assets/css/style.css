@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.loginForm {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loginForm form {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  .submit {
+    padding-top: 5px;
+  }
+}
+
+.loginForm.fade-out {
+  opacity: 0;
+}
+
+.signUpForm {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.signUpForm form {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+@keyframes formFadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.loginForm.animate-out {
+  animation: formFadeUp 0.8s forwards;
+}
+
+.signUpForm.animate-out {
+  animation: formFadeUp 0.8s forwards;
+}
+
+/* Login success fade & scale */
+@keyframes successFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.login-success {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: white;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.login-success.animate-in {
+  display: flex;
+  animation: successFadeIn 0.8s forwards;
+}
+
+.login-success .sucess::after {
+  content: "✔";
+  display: block;
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+.loginForm.animate-out {
+  animation: formFadeUp 0.8s forwards;
+}
+
+.conPass-error {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: #dd104d;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.conPass-error.animate-in {
+  display: flex;
+  animation: successFadeIn 0.8s forwards;
+}
+
+.conPass-error .error::after {
+  content: "❌";
+  display: block;
+  font-size: 3rem;
+  margin-top: 10px;
+}
